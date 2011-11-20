@@ -10,7 +10,7 @@ describe User do
     user2.should_not be_valid
   end
 
-  describe "find_for_database_authentication" do
+  describe "#find_for_database_authentication" do
     let (:user) { Factory(:user) }
     let (:conditions) { {:login => user.username} }
     it "should find by username" do
@@ -19,6 +19,15 @@ describe User do
     let (:conditions) { {:login => user.email} }
     it "should find by email address" do
       User.find_for_database_authentication(conditions).should == user
+    end
+  end
+  describe "#find_for_token_authentication" do
+    let(:user) { Factory(:user) }
+    let(:client_application) { Factory(:client_application) }
+    let(:access_grant) { Factory(:access_grant, :client_application => client_application, :user => user) }
+    let(:conditions) { {"access_token" => access_grant.access_token} }
+    it "should find for access grant token" do
+      User.find_for_token_authentication(conditions).should == user
     end
   end
 end

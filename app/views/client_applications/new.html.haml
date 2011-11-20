@@ -1,0 +1,12 @@
+%h2 New Client Application
+
+= form_for @client_application do |f|
+  %div
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %div
+    = f.label :description
+    %br/
+    = f.text_field :description
+  %div= f.submit "Create"

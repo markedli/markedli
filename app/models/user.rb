@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :token_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   field :email, :type => String
@@ -20,4 +20,10 @@ class User
     login = conditions.delete(:login)
     self.any_of({ :username => login }, { :email => login }).first
   end
+
+  self.token_authentication_key = "access_token"
+  def self.find_for_token_authentication conditions
+    find(AccessGrant.where(access_token: conditions[token_authentication_key]).only(:user_id).last.user_id)
+  end
+    
 end

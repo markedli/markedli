@@ -14,6 +14,16 @@ Given /^I am a guest$/ do
   visit '/users/sign_out'
 end
 
+Given /^I am logged in$/ do
+  @user = Factory(:user)
+  visit '/users/sign_in'
+
+  fill_in 'Username or email', :with => @user.username
+  fill_in 'Password', :with => @user.password
+
+  click_button "Sign in"
+end
+
 When /^I create a user account$/ do
   visit '/users/sign_up'
 

@@ -1,0 +1,8 @@
+%ul
+  - if user_signed_in?
+    %li= current_user.username
+    %li= link_to('Logout', destroy_user_session_path, :method => :delete) 
+    %li= link_to('Edit account', edit_user_registration_path)
+  - else
+    %li= link_to('Login', new_user_session_path)  
+    %li= link_to('Register', new_user_registration_path)

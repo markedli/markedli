@@ -6,4 +6,4 @@ test:
   port: 27017
   username: travis
   password: test
-  database: myapp
+  database: markedli

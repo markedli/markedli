@@ -3,6 +3,7 @@ branches:
   only:
     - master
 before_script:
+  - mongo markedli --eval 'db.addUser("travis", "test");'
   - "cp config/mongoid.yml.travis config/mongoid.yml"
 notifications:
   irc: "irc.freenode.org#markedli-dev"

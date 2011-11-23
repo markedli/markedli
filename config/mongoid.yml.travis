@@ -1,0 +1,9 @@
+#travis:test@localhost:27017/myapp
+# mongodb config for travis-ci
+
+test:
+  host: localhost
+  port: 27017
+  username: travis
+  password: test
+  database: myapp

@@ -39,6 +39,7 @@ gem 'mongoid-rspec', ">= 1.4.4", :group => :test
 gem "factory_girl_rails", ">= 1.3.0", :group => :test
 gem "capybara", ">= 1.1.1", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
+gem "simplecov", ">= 0.5.4", :require => false, :group => :test
 # guard
 gem "guard", ">= 0.6.2", :group => :development
 case HOST_OS

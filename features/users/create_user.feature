@@ -1,5 +1,5 @@
 Feature: Create a user
-  In order to create and orginize bookmarks
+  In order to create and organize bookmarks
   As a guest
   I want to create a user account
 

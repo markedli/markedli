@@ -3,6 +3,7 @@ Markedli::Application.routes.draw do
   match 'oauth/access_token' => 'oauth#access_token'
 
   resources :client_applications, :only => [:new, :create, :show]
+	resources :bookmarks, :only => [:new, :create, :index, :show]
   devise_for :users
   root :to => "public#index"
   # The priority is based upon order of creation:

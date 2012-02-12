@@ -1,9 +1,8 @@
 class Bookmark
-    include Mongoid::Document
+  include Mongoid::Document
     field :url, :type => String
     field :title, :type => String
     field :description, :type => String
-    field :tags, :type => Array
     field :is_private, :type => Boolean
     field :user_id, :type => Integer
     field :timestamp, :type => Time

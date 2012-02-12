@@ -1,0 +1,11 @@
+%h1 Markedli New Bookmark
+%p Create a new bookmark
+=form_for @bookmark do |f|
+	=error_messages_for(@bookmark)
+	%dl
+		%dt
+			=f.label :url, "URL"
+		%dd
+			=f.text_field :url
+	=f.submit
+	

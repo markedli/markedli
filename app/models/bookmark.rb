@@ -10,6 +10,8 @@ class Bookmark
 
     belongs_to :user
 
+    attr_accessible :url, :title, :description, :tags, :is_private
+
     validates :url, :presence => true,
                     :length => {:minimum => 2, :message => "must be at least 2 characters long"}
 

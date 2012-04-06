@@ -1,2 +1,0 @@
-class BookmarkController < ApplicationController
-end

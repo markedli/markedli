@@ -19,7 +19,7 @@ class Bookmark
                       :length => {:minimum => 2, :message => "must be at least 2 characters long"},
                       :length => {:maximum => 255, :message => "must be less than 256 characters long"}
 
-    validates :description, :length => {:maximum => 10000, :message => "must be less than 10000 characters long"}
+    validates :description, :length => {:maximum => 10000, :message => "must be less than 10001 characters long"}
 
     validates :user_id, :presence => true,
 

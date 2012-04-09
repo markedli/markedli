@@ -1,12 +1,12 @@
 class Bookmark
     include Mongoid::Document
+    include Mongoid::Timestamps
     field :url, :type => String
     field :title, :type => String
     field :description, :type => String
     field :tags, :type => Array
     field :is_private, :type => Boolean
     field :user_id, :type => Integer
-    field :timestamp, :type => Time
 
     belongs_to :user
 
@@ -22,8 +22,5 @@ class Bookmark
     validates :description, :length => {:maximum => 10000, :message => "must be less than 10000 characters long"}
 
     validates :user_id, :presence => true,
-                       :length => {:minimum => 1, :message => "must be at least 1 characters long"}
-
-    validates :timestamp, :presence => true
 
 end

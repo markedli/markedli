@@ -2,14 +2,51 @@ require 'spec_helper'
 
 describe Bookmark do
 
-describe Bookmark do
+	before do
+		@bookmark = Bookmark.new(url: "www.example.com", title: "Example.com", user_id: 1)
+	end
+	
+	subject { @bookmark }
+	
+	it { should respond_to(:url) }
+	it { should respond_to(:title) }
+	it { should respond_to(:user_id) }
+	
+	it { should be_valid }
+	
+	describe "when url is not present" do
+		before { @bookmark.url = "" }
+		it { should_not be_valid }
+	end
+	
+	describe "when url is too short" do
+		before { @bookmark.url = "a" }
+		it { should_not be_valid }
+	end
+	
+	describe "when title is not present" do
+		before { @bookmark.title = "" }
+		it { should_not be_valid }
+	end
 
-it { should accept_values_for(:url, "janedoe", "jd", "jd23", "j_d") }
-it { should_not accept_values_for(:url, “”, “j”, nil)}
+	describe "when title is too short" do
+		before { @bookmark.url = "a" }
+		it { should_not be_valid }
+	end
 
-it { should accept_values_for(:title, "test", "tt", "t11", "t_est") }
-it { should_not accept_values_for(:title, "”, “j”, nil)}
+	describe "when title is too long" do
+		before { @bookmark.url = "a" * 256 }
+		it { should_not be_valid }
+	end
 
-it { should accept_values_for(:description, "testing","balh blah blah", "jd 125", "jd_123", nil) }
+	describe "when description is too long" do
+		before { @bookmark.description = "a" * 10001 }
+		it { should_not be_valid }
+	end
+
+	describe "when user_id is not present" do
+		before { @bookmark.user_id = nil }
+		it { should_not be_valid }
+	end
 
 end

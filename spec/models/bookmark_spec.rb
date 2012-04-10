@@ -2,10 +2,9 @@ require 'spec_helper'
 
 describe Bookmark do
 
-	before do
-		@bookmark = Bookmark.new(url: "www.example.com", title: "Example.com", user_id: 1)
-	end
-	
+	let(:user) { FactoryGirl.create(:user) }
+	before { @bookmark = user.bookmarks.build(url: "www.example.com", title: "Example.com") }
+
 	subject { @bookmark }
 	
 	it { should respond_to(:url) }

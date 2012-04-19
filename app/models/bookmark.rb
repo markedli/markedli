@@ -5,7 +5,7 @@ class Bookmark
     field :description, :type => String
     field :is_private, :type => Boolean
     field :user_id, :type => Integer
-    field :timestamp, :type => Time
+    field :timestamp, :type => DateTime
 
     belongs_to :user
 

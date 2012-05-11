@@ -29,7 +29,7 @@ gem "haml-rails", ">= 0.3.4", :group => :development
 gem "rails-footnotes", ">= 3.7", :group => :development
 
 # Tools & libs
-gem "devise", ">= 1.4.7"
+gem "devise", "~> 2.0.4"
 
 # Testing & Development with guard
 gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]

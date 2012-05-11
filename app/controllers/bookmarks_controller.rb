@@ -9,6 +9,7 @@ class BookmarksController < ApplicationController
 	def create
 		@bookmark = Bookmark.create(params[:bookmark])
 		@bookmark.timestamp = Time.now.to_i
+		@bookmark.user_id = current_user.id
 		if @bookmark && @bookmark.save
       flash[:notice] = "Bookmark created successfully"
       redirect_to(@bookmark)

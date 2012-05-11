@@ -8,6 +8,7 @@ When /^I create a bookmark$/ do
 end
 
 Then /^I should see my new bookmark$/ do
+	page.should have_content("Your bookmark URL is")
   find('#flash_notice').should have_content('Bookmark created successfully')
 end
 

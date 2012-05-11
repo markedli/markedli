@@ -7,18 +7,20 @@ class BookmarksController < ApplicationController
 	end
 
 	def create
-		respond_to do |format|
-			if @bookmark && @bookmark.save
-				flash[:notice] = "Bookmark created successfully"
-				format.html {redirect_to(@bookmark)}
-			else
-				flash[:error] = "Error creating bookmark"
-				format.html {render :action => "new"}
-			end
-		end
+		@bookmark = Bookmark.create(params[:bookmark])
+		@bookmark.timestamp = Time.now.to_i
+		if @bookmark && @bookmark.save
+      flash[:notice] = "Bookmark created successfully"
+      redirect_to(@bookmark)
+    else
+      flash[:error] = "Error creating bookmark"
+			flash[:notice] = @bookmark.title
+      render :action => "new"
+    end
 	end
 
 	def show
+		@bookmark = Bookmark.find(params[:id])
 	end
 
 end

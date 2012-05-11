@@ -1,0 +1,10 @@
+%h1 Markedli Bookmarks#show
+%p Find me in app/views/bookmarks/show.html.haml
+%p This will be an individual bookmarks. You can also 
+=link_to("create a new one", new_bookmark_path)
+
+%p Your bookmark URL is
+=@bookmark.url
+
+%p Your bookmark Title is
+=@bookmark.title

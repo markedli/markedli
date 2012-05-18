@@ -1,4 +1,6 @@
 Markedli::Application.routes.draw do
+  get "bookmarks/new"
+
   match 'oauth/authorize' => 'oauth#authorize'
   match 'oauth/access_token' => 'oauth#access_token'
 

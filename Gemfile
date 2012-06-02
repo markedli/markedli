@@ -3,7 +3,7 @@ HOST_OS = RbConfig::CONFIG['host_os']
 
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.2'
 # Database
 gem "bson_ext", ">= 1.4.0"
 gem "mongoid", ">= 2.3.0"
@@ -13,8 +13,8 @@ gem "mongoid", ">= 2.3.0"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
+  gem 'sass-rails',   '>= 3.1.4'
+  gem 'coffee-rails', '>= 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
@@ -29,7 +29,7 @@ gem "haml-rails", ">= 0.3.4", :group => :development
 gem "rails-footnotes", ">= 3.7", :group => :development
 
 # Tools & libs
-gem "devise", ">= 1.4.7"
+gem "devise", "~> 2.0.4"
 
 # Testing & Development with guard
 gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]

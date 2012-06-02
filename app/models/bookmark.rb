@@ -8,7 +8,7 @@ class Bookmark
     field :is_private, :type => Boolean
     field :user_id, :type => Integer
 
-    belongs_to :user
+    embedded_in :user
 
     attr_accessible :url, :title, :description, :tags, :is_private
 

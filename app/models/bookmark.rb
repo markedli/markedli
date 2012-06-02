@@ -21,6 +21,6 @@ class Bookmark
 
     validates :description, :length => {:maximum => 10000, :message => "must be less than 10001 characters long"}
 
-    validates :user_id, :presence => true,
+    validates :user_id, :presence => true
 
 end

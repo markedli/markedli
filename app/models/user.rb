@@ -50,6 +50,8 @@ class User
                        :format => { :with => /^[A-Za-z\d_]+$/, :message => "can only be alphanumeric with no spaces"},
                        :uniqueness => true
 
+  embeds_many :bookmarks
+
   # Virtual login for authenticating via username or email
   attr_accessor :login
   attr_accessible :login, :username, :email, :password, :password_confirmation, :remember_me

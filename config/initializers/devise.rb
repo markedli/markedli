@@ -208,4 +208,7 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+
+	# This is for upgrade to Devise 2.0
+	config.apply_schema = false
 end

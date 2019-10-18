@@ -3,7 +3,7 @@ HOST_OS = RbConfig::CONFIG['host_os']
 
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.17'
 # Database
 gem "bson_ext", ">= 1.4.0"
 gem "mongoid", ">= 2.3.0"
